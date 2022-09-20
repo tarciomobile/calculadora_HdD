@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>PCP - Calculadora HdD 2022</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="shortcut icon" href="/calculadora.ico" type="image/x-icon">
+  <link rel="icon" href="/calculadora.ico" type="image/x-icon">
+
+  <style>
+
+    #exclude{
+      font-weight:bold;
+      text-align: center;
+    }
+
+    #media{
+      font-weight:bold;
+      text-align: center;
+    }
+
+    #creditos {
+      color: rgba(255, 255, 255, 0.459);
+      font-size: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+</style>
+</head>
+
+<body>
+  <div id="creditos" align="center">Desenvolvido por: Prof. Tárcio Basílio. V20092022</div>
+
+<form>
+
+<center>
+<h2>Calculadora de Média da Hora do Desafio</h2>
+<br>
+
+<label>Insira a nota da sua Hora do Desafio 8/9 </label> <input type="number" id="nota1" name="nota1"> </input><br><br>
+
+<label>Insira a nota da sua Hora do Desafio 9/10 </label> <input type="number" id="nota2" name="nota2"> <br><br>
+
+<label>Insira a nota da sua Hora do Desafio 10/11 </label> <input type="number"id="nota3" name="nota3"> <br><br>
+
+<label>Insira a nota da sua Hora do Desafio 11/12 </label> <input type="number" id="nota4" name="nota4"> <br><br>
+
+ <br>
+  
+ <input type="button" id="button" name="button" value = "Aperte para calcular" onclick = "calculo()"> 
+
+<br>
+</CENTER>
+</form>
+
+<br>
+<p id="media">Média: </p>
+<p id="exclude">Nota excluída: </p>
+
+
+
+
+
+
+
+
+</body>
+
+
+
+<script>
+
+function calculo(){
+  
+var nota1 =Number( document.getElementById("nota1").value )
+var nota2 =Number( document.getElementById("nota2").value )
+var nota3 =Number( document.getElementById("nota3").value )
+var nota4 =Number( document.getElementById("nota4").value )
+
+var excluida = Math.min(nota1, nota2, nota3, nota4)
+var media=(nota1+nota2+nota3+nota4 - excluida)/3
+
+document.getElementById("media").textContent="Média: " + media.toFixed(2)
+
+document.getElementById("exclude").textContent="Nota excluída: " + excluida.toFixed(2)
+
+}
+
+</script> 	 
+
+
+
+</html>
